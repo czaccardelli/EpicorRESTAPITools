@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicorAPI", "EpicorAPI\EpicorAPI.csproj", "{FDC70304-5283-4CF3-BB16-135EA7C7C079}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDC70304-5283-4CF3-BB16-135EA7C7C079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC70304-5283-4CF3-BB16-135EA7C7C079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC70304-5283-4CF3-BB16-135EA7C7C079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC70304-5283-4CF3-BB16-135EA7C7C079}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DDB0B444-51DF-4BC7-9E13-3B09F57D2ADC}
+	EndGlobalSection
+EndGlobal
