@@ -171,39 +171,6 @@ namespace RMAApp
                 epicorResponse.Dispose();
             }
         }
-
-		public async Task<string> PostToEpicor(string jsonPayload, Uri endPoint, NetworkCredential credentials)
-		{
-            HttpRequestMessage epicorRequest = null;
-            HttpResponseMessage epicorResponse = null;
-            try
-			{
-                epicorRequest = new HttpRequestMessage(HttpMethod.Post, new Uri(EpicorClient.BaseAddress, endPoint));
-				epicorRequest.Content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-				epicorResponse = await EpicorClient.SendAsync(epicorRequest);
-                if (epicorResponse.IsSuccessStatusCode)
-                {
-                    return await epicorResponse.Content.ReadAsStringAsync();
-                }
-                else
-				{
-					throw new EpicorAPIException(await epicorResponse.Content.ReadAsStringAsync(), jsonPayload);
-				}
-			}
-			catch (EpicorAPIException epicorEx)
-			{
-                throw epicorEx;
-			}
-			catch (Exception ex)
-			{
-                throw;
-			}
-            finally
-            {
-                epicorRequest.Dispose();
-                epicorResponse.Dispose();
-            }
-		}
         public static string AddParamsToResponse(string response, object objParams)
         {
             JObject jResponse = JObject.Parse(response);
@@ -273,7 +240,6 @@ namespace RMAApp
             {
                 EpicorClient.Dispose();
                 EpicorClientHandler.Dispose();
-
             }
             disposed = true;
         }
