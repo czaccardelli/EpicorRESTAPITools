@@ -19,6 +19,7 @@ namespace EpicorRESTAPITools
             EpicorCredentials = epicorCredentials;
             EpicorClientHandler = new HttpClientHandler() { Credentials = EpicorCredentials };
             EpicorClient = new HttpClient(EpicorClientHandler);
+            EpicorClient.BaseAddress = BaseAddress;
         }
 
         public EpicorAPI(string userName, string password, string baseAddress)
@@ -26,6 +27,8 @@ namespace EpicorRESTAPITools
             BaseAddress = new Uri(baseAddress);
             EpicorCredentials = new NetworkCredential(userName, password);
             EpicorClientHandler = new HttpClientHandler() { Credentials = EpicorCredentials };
+            EpicorClient = new HttpClient(EpicorClientHandler);
+            EpicorClient.BaseAddress = BaseAddress;
         }
         public EpicorAPI(string userName, SecureString password, string baseAddress)
         {
@@ -33,6 +36,7 @@ namespace EpicorRESTAPITools
             EpicorCredentials = new NetworkCredential(userName, password);
             EpicorClientHandler = new HttpClientHandler() { Credentials = EpicorCredentials };
             password.Dispose();
+            EpicorClient.BaseAddress = BaseAddress;
         }
 
         private bool disposed = false;
