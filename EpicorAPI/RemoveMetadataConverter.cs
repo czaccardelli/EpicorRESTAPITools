@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace RMAApp
+namespace EpicorRESTAPITools
 {
     public class RemoveMetadataConverter : JsonConverter //TODO: implement custom converter to remove metadata from Epicor reponses for serialization
     {

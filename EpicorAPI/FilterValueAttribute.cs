@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace RMAApp
+namespace EpicorRESTAPITools
 {
     [System.AttributeUsage(AttributeTargets.Property, Inherited = false, AllowMultiple = true)]
     sealed class FilterValueAttribute : Attribute

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 
-namespace RMAApp
+namespace EpicorRESTAPITools
 {
 	public class EpicorAPIException : Exception
 	{

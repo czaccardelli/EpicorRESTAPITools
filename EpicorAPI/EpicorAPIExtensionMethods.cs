@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace RMAApp
+namespace EpicorRESTAPITools
 {
     public static class EpicorAPIExtensionMethods
     {

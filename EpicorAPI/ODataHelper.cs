@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RMAApp
+namespace EpicorRESTAPITools
 {
     public static class ODataHelper
     {

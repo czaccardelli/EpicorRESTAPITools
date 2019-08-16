@@ -1,4 +1,4 @@
-﻿namespace RMAApp
+﻿namespace EpicorRESTAPITools
 {
     public class ServiceEntity //TODO: change PrimaryKey and Key into collection objects to support cases where more than one primary key is necessary (e.g. CustomerPartXRef)
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using static RMAApp.EpicorAPI;
+using static EpicorRESTAPITools.EpicorAPI;
 
-namespace RMAApp
+namespace EpicorRESTAPITools
 {
 	[AttributeUsage(AttributeTargets.Property, Inherited = true, AllowMultiple = true)]
 	public sealed class LookupAttribute : Attribute
