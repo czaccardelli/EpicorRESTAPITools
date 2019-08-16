@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,14 @@ namespace RMAApp
         public override bool CanConvert(Type objectType)
         {
             throw new NotImplementedException();
+        }
+        public override bool CanRead
+        {
+            get { return true; }
+        }
+        public override bool CanWrite
+        {
+            get { return false; }
         }
     }
 }
