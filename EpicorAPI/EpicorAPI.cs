@@ -86,7 +86,7 @@ namespace EpicorRESTAPITools
 			public string metadata { get; set; }
 		}
 
-		public async Task<string> GetLookupValues(ServiceEntity serviceEntity, string expandOptions = null, string selectOptions = null, string filterKey = null)
+		public async Task<string> GetWithODataOptions(ServiceEntity serviceEntity, string expandOptions = null, string selectOptions = null, string filterKey = null)
 		{
             HttpRequestMessage epicorRequest = null;
             HttpResponseMessage epicorResponse = null;
@@ -133,9 +133,9 @@ namespace EpicorRESTAPITools
 					throw new EpicorAPIException(await epicorRequest.Content.ReadAsStringAsync(), await epicorResponse.Content.ReadAsStringAsync());
 				}
 			}
-			catch (EpicorAPIException exp)
+			catch (EpicorAPIException epicorEx)
 			{
-				throw exp;
+				throw epicorEx;
 			}
             finally
             {
@@ -211,6 +211,22 @@ namespace EpicorRESTAPITools
             if (jResponse.SelectToken("['odata.metadata']") != null) //check for POST response to Epicor OData POST request (brackets are to escape . char in JPath expression)
             {
                 return jResponse.SelectToken("value").ToString();
+            }
+            else
+            {
+                dsCont = GetRawJContainer(response);
+                return dsCont.ToString();
+            }
+        }
+        public static string RemoveMetadataFromResponse<T>(string response)
+        {
+            JObject jResponse = JObject.Parse(response);
+            JContainer dsCont = new JArray();
+            if (jResponse.SelectToken("['odata.metadata']") != null) //check for POST response to Epicor OData POST request (brackets are to escape . char in JPath expression)
+            {
+                JToken valuesArray = jResponse.SelectToken("value");
+                JProperty namedValues = new JProperty(typeof(T).Name, valuesArray);
+                return namedValues.ToString();
             }
             else
             {
